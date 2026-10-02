@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Tech - SPA</title>
+    <style>
+        /* ESTILOS GENERALES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; cursor: pointer; }
+        header p { opacity: 0.9; }
+
+        /* NAVEGACIÓN (MENÚ) */
+        nav {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0.5rem 0;
+            overflow-x: auto; /* Para móviles */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            white-space: nowrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover, nav a.active {
+            background-color: #667eea;
+            color: white;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            min-height: 60vh;
+        }
+
+        /* ESTILO DE TÍTULO DE CATEGORÍA (Como tu imagen) */
+        .category-header {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* GRID DE ENTRADAS (ÁLBUM) */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .post-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .card-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .read-btn {
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* VISTA DE ARTÍCULO INDIVIDUAL (OCULTA POR DEFECTO) */
+        #article-view {
+            display: none; /* Se activa con JS */
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f2f5;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .back-button:hover {
+            background: #e2e6ea;
+            color: #667eea;
+        }
+
+        .article-hero-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .article-title {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .article-meta {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        .article-content {
+            font-size: 1.15rem;
+            color: #444;
+            line-height: 1.8;
+        }
+        .article-content p { margin-bottom: 1.5rem; }
+
+        /* FORMULARIO CONTACTO */
+        .contact-section {
+            margin-top: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; border: none; padding: 1rem 2rem; border-radius: 6px;
+            cursor: pointer; font-size: 1rem; width: 100%; font-weight: bold;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .article-hero-img { height: 250px; }
+            #article-view { padding: 1.5rem; }
+            nav ul { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header onclick="resetView()">
+        <h1>️ Blog Tech</h1>
+        <p>Tu fuente de conocimiento tecnológico</p>
+    </header>
+
+    <!-- MENÚ DINÁMICO -->
+    <nav>
+        <ul id="navList">
+            <li><a onclick="filterCategory('all')" class="active" id="nav-all">Todas</a></li>
+            <!-- Las categorías se insertan aquí con JS -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <!-- VISTA DE LISTA (GRID) -->
+        <div id="list-view">
+            <div id="categoryHeader" class="category-header" style="display:none;">
+                <span id="catIcon"></span> <span id="catName"></span>
+            </div>
+            <div class="posts-grid" id="postsGrid">
+                <!-- Las tarjetas se generan aquí -->
+            </div>
+        </div>
+
+        <!-- VISTA DE ARTÍCULO INDIVIDUAL -->
+        <div id="article-view">
+            <button class="back-button" onclick="goBack()"> Volver al listado</button>
+            <img src="" alt="" id="art-img" class="article-hero-img">
+            <h1 id="art-title" class="article-title"></h1>
+            <div class="article-meta">
+                Publicado el <span id="art-date"></span> • Categoría: <span id="art-cat"></span>
+            </div>
+            <div id="art-content" class="article-content"></div>
+            
+            <!-- Formulario al final del artículo también -->
+            <div class="contact-section" style="margin-top: 3rem;">
+                <h3>¿Te ha gustado? Déjanos un comentario o sugerencia</h3>
+                <br>
+                <form action="https://formspree.io/f/meaowyvj" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Tu mensaje..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Comentario</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="text-align:center; padding: 2rem; color:#777; margin-top:2rem;">
+        &copy; 2026 Blog Tech - Todos los derechos reservados
+    </footer>
+
+    <script>
+        // ==========================================
+        // DATOS DE LAS ENTRADAS (EDITAR AQUÍ)
+        // ==========================================
+        const posts = [
+            {
+                id: 1,
+                title: "Introducción a Python para Principiantes",
+                category: "Programación",
+                image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&h=600&fit=crop",
+                content: "<p>Python es uno de los lenguajes más potentes y sencillos de aprender. En este artículo cubrimos desde la instalación hasta tu primer bucle 'for'. Es ideal para análisis de datos y automatización.</p><p>La sintaxis limpia de Python permite escribir menos líneas de código comparado con Java o C++.</p>",
+                date: "15 Oct 2026"
+            },
+            {
+                id: 2,
+                title: "JavaScript Moderno: ES6 y Beyond",
+                category: "Programación",
+                image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
+                content: "<p>El estándar ES6 trajo革命 al desarrollo web. Arrow functions, Promesas y Async/Await cambiaron para siempre cómo manejamos la asincronía en el navegador.</p>",
+                date: "18 Oct 2026"
+            },
+            {
+                id: 3,
+                title: "Fundamentos de TCP/IP",
+                category: "Redes",
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop",
+                content: "<p>Entender cómo viajan los paquetes por internet es vital. Analizamos el modelo OSI y cómo funciona el handshake de TCP.</p>",
+                date: "10 Oct 2026"
+            },
+            {
+                id: 4,
+                title: "Configuración de Redes WiFi Seguras",
+                category: "Redes",
+                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
+                content: "<p>WPA3 es el nuevo estándar. Aprende a segmentar tu red doméstica para proteger tus dispositivos IoT de intrusos.</p>",
+                date: "12 Oct 2026"
+            },
+            {
+                id: 5,
+                title: "Ciberseguridad: Protegiendo tu Identidad",
+                category: "Seguridad",
+                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+                content: "<p>El phishing evoluciona cada día. Descubre cómo usar gestores de contraseñas y autenticación de dos factores (2FA) correctamente.</p>",
+                date: "08 Oct 2026"
+            },
+            {
+                id: 6,
+                title: "Hacking Ético y Pentesting",
+                category: "Seguridad",
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+                content: "<p>Kali Linux y Metasploit son herramientas esenciales. El hacking ético busca vulnerabilidades antes que los criminales.</p>",
+                date: "11 Oct 2026"
+            },
+            {
+                id: 7,
+                title: "PC Gaming de Alto Rendimiento",
+                category: "Hardware",
+                image: "https://images.unsplash.com/photo-1587202372634-32705e3e568e?w=800&h=600&fit=crop",
+                content: "<p>Montar un PC hoy en día requiere equilibrio entre CPU y GPU. Analizamos las mejores combinaciones calidad-precio para 2026.</p>",
+                date: "05 Oct 2026"
+            },
+            {
+                id: 8,
+                title: "Procesadores: Intel vs AMD en 2026",
+                category: "Hardware",
+                image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&h=600&fit=crop",
+                content: "<p>La batalla de los núcleos continúa. ¿Es mejor tener más núcleos para productividad o mayor frecuencia para gaming?</p>",
+                date: "07 Oct 2026"
+            },
+            {
+                id: 9,
+                title: "Sistemas Operativos: Windows vs Linux",
+                category: "Software",
+                image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=600&fit=crop",
+                content: "<p>Linux ha ganado mucho terreno en el escritorio gracias a Steam Deck y mejoras en drivers. ¿Es hora de hacer el cambio?</p>",
+                date: "01 Oct 2026"
+            },
+            {
+                id: 10,
+                title: "SQL vs NoSQL: La Guía Definitiva",
+                category: "Bases de Datos",
+                image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
+                content: "<p>MongoDB no siempre es la respuesta. Aprende cuándo la estructura relacional de PostgreSQL es insustituible.</p>",
+                date: "25 Sep 2026"
+            },
+            {
+                id: 11,
+                title: "Machine Learning para Principiantes",
+                category: "Inteligencia Artificial",
+                image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
+                content: "<p>Las redes neuronales no son magia. Entender la regresión lineal es el primer paso para dominar TensorFlow.</p>",
+                date: "20 Sep 2026"
+            },
+            {
+                id: 12,
+                title: "ChatGPT y el futuro del trabajo",
+                category: "Inteligencia Artificial",
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+                content: "<p>Los LLMs están cambiando la programación y la redacción. ¿Cómo integrarlos en tu flujo de trabajo sin perder calidad?</p>",
+                date: "22 Sep 2026"
+            }
+        ];
+
+        // Iconos para categorías
+        const catIcons = {
+            "Programación": "💻",
+            "Redes": "🌐",
+            "Seguridad": "🔒",
+            "Hardware": "️",
+            "Software": "",
+            "Bases de Datos": "️",
+            "Inteligencia Artificial": "🤖"
+        };
+
+        // ==========================================
+        // LÓGICA DE LA PÁGINA
+        // ==========================================
+        
+        const gridView = document.getElementById('list-view');
+        const articleView = document.getElementById('article-view');
+        const postsGrid = document.getElementById('postsGrid');
+        const navList = document.getElementById('navList');
+        const categoryHeader = document.getElementById('categoryHeader');
+
+        // 1. Inicializar Menú
+        function initMenu() {
+            const categories = [...new Set(posts.map(p => p.category))].sort();
+            
+            categories.forEach(cat => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.textContent = cat;
+                a.onclick = () => filterCategory(cat);
+                a.id = `nav-${cat}`; // ID para marcar activo
+                li.appendChild(a);
+                navList.appendChild(li);
+            });
+        }
+
+        // 2. Renderizar Entradas (Grid)
+        function renderPosts(filterCat = 'all') {
+            postsGrid.innerHTML = '';
+            
+            // Filtrar posts
+            const filtered = filterCat === 'all' 
+                ? posts 
+                : posts.filter(p => p.category === filterCat);
+
+            // Mostrar/Ocultar cabecera de categoría
+            if (filterCat !== 'all') {
+                categoryHeader.style.display = 'flex';
+                document.getElementById('catName').textContent = filterCat;
+                document.getElementById('catIcon').textContent = catIcons[filterCat] || '📁';
+            } else {
+                categoryHeader.style.display = 'none';
+            }
+
+            // Crear tarjetas
+            filtered.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'post-card';
+                card.onclick = () => openArticle(post.id);
+                
+                card.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="card-body">
+                        <div class="card-meta">${post.category} • ${post.date}</div>
+                        <div class="card-title">${post.title}</div>
+                        <div class="card-excerpt">${post.content.replace(/<[^>]*>?/gm, '').substring(0, 80)}...</div>
+                        <span class="read-btn">Leer artículo completo →</span>
+                    </div>
+                `;
+                postsGrid.appendChild(card);
+            });
+        }
+
+        // 3. Filtrar Categoría
+        function filterCategory(cat) {
+            // Actualizar clase activa en menú
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            const activeLink = document.getElementById(cat === 'all' ? 'nav-all' : `nav-${cat}`);
+            if(activeLink) activeLink.classList.add('active');
+
+            // Asegurar que estamos en vista lista
+            showListView();
+            
+            // Renderizar
+            renderPosts(cat);
+            
+            // Scroll arriba suave
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 4. Abrir Artículo (Vista Individual)
+        function openArticle(id) {
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            // Rellenar datos
+            document.getElementById('art-img').src = post.image;
+            document.getElementById('art-title').textContent = post.title;
+            document.getElementById('art-date').textContent = post.date;
+            document.getElementById('art-cat').textContent = post.category;
+            document.getElementById('art-content').innerHTML = post.content;
+
+            // Cambiar vista
+            gridView.style.display = 'none';
+            articleView.style.display = 'block';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 5. Botón Atrás / Reset
+        function goBack() {
+            showListView();
+            // Mantenemos el filtro actual, solo volvemos a la lista
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showListView() {
+            articleView.style.display = 'none';
+            gridView.style.display = 'block';
+        }
+
+        function resetView() {
+            filterCategory('all');
+        }
+
+        // INICIO
+        initMenu();
+        renderPosts('all');
+
+    </script>
+</body>
+</html>
