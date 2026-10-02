@@ -7,47 +7,45 @@
     <!-- VERIFICACIÓN GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="ifqCv2GhUP1T9SNLvbV9kcZ8A8L9zwZdFFmaqcSiANM" />
     
-    <!-- META TAGS SEO ESENCIALES -->
-    <title>Blog Tech - Artículos de Informática, Programación y Tecnología</title>
-    <meta name="description" content="Blog especializado en informática con artículos sobre programación, redes, ciberseguridad, hardware, IA y bases de datos. Contenido técnico actualizado 2026." />
-    <meta name="keywords" content="informática, programación, python, javascript, ciberseguridad, hardware, inteligencia artificial, bases de datos, redes, tecnología" />
-    <meta name="author" content="Blog Tech" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <link rel="canonical" href="https://tudominio.com/" />
+    <!-- META TAGS SEO OPTIMIZADOS PARA VITVISOR -->
+    <title>VitVisor - Blog de Informática, Programación y Tecnología</title>
+    <meta name="description" content="VitVisor: Tu portal especializado en informática. Artículos sobre programación, redes, ciberseguridad, hardware, IA y bases de datos. Contenido técnico actualizado 2026." />
+    <meta name="keywords" content="vitvisor, informática, programación, python, javascript, ciberseguridad, hardware, inteligencia artificial, bases de datos, tecnología" />
+    <meta name="author" content="VitVisor" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     
-    <!-- OPEN GRAPH PARA REDES SOCIALES -->
-    <meta property="og:title" content="Blog Tech - Artículos de Informática y Tecnología" />
-    <meta property="og:description" content="Contenido técnico sobre programación, seguridad, hardware e IA. Aprende con artículos prácticos y actualizados." />
+    <!-- CANONICAL Y OPEN GRAPH CORRECTOS PARA GITHUB PAGES -->
+    <link rel="canonical" href="https://sergiodepaz.github.io/vitvisore/" />
+    <meta property="og:title" content="VitVisor - Blog de Informática y Tecnología" />
+    <meta property="og:description" content="Contenido técnico sobre programación, seguridad, hardware e IA. Aprende con artículos prácticos en VitVisor." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sergiodepaz.github.io/vitvisore/" />
     <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop" />
     <meta property="og:locale" content="es_ES" />
-    
-    <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Blog Tech - Informática y Tecnología" />
+    <meta name="twitter:title" content="VitVisor - Informática y Tecnología" />
     <meta name="twitter:description" content="Artículos técnicos sobre programación, ciberseguridad, hardware e inteligencia artificial." />
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop" />
     
-    <!-- DATOS ESTRUCTURADOS SCHEMA.ORG -->
+    <!-- SCHEMA.ORG WEB SITE -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Blog Tech",
-        "url": "https://tudominio.com/",
+        "name": "VitVisor",
+        "url": "https://sergiodepaz.github.io/vitvisore/",
         "description": "Blog especializado en informática con artículos sobre programación, redes, ciberseguridad, hardware, IA y bases de datos.",
         "publisher": {
             "@type": "Organization",
-            "name": "Blog Tech",
+            "name": "VitVisor",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://tudominio.com/logo.png"
+                "url": "https://sergiodepaz.github.io/vitvisore/logo.png"
             }
         },
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://tudominio.com/?s={search_term_string}",
+            "target": "https://sergiodepaz.github.io/vitvisore/?s={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
@@ -55,211 +53,76 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; }
+        
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem 1rem; text-align: center; }
         header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; cursor: pointer; }
         header p { opacity: 0.9; }
-        nav {
-            background-color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 0.5rem 0;
-            overflow-x: auto;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            white-space: nowrap;
-        }
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        nav a:hover, nav a.active {
-            background-color: #667eea;
-            color: white;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            min-height: 60vh;
-        }
-        .category-header {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .post-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-        .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .post-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            loading: lazy;
-        }
-        .card-body {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-meta {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .card-title {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-        .card-excerpt {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 1rem;
-            flex: 1;
-        }
-        .read-btn {
-            color: #667eea;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        #article-view {
-            display: none;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            animation: fadeIn 0.5s;
-        }
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #f0f2f5;
-            color: #333;
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: background 0.3s;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-        .back-button:hover {
-            background: #e2e6ea;
-            color: #667eea;
-        }
-        .article-hero-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            loading: lazy;
-        }
-        .article-title {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .article-meta {
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        .article-content {
-            font-size: 1.15rem;
-            color: #444;
-            line-height: 1.8;
-        }
+
+        /* NAVEGACIÓN */
+        nav { background-color: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 0.5rem 0; overflow-x: auto; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem; white-space: nowrap; }
+        nav a { text-decoration: none; color: #555; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s; cursor: pointer; }
+        nav a:hover, nav a.active { background-color: #667eea; color: white; }
+
+        /* BARRA DE HERRAMIENTAS (BÚSQUEDA) */
+        .toolbar { background: white; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 60px; z-index: 99; }
+        .toolbar-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .search-box { display: flex; gap: 0.5rem; flex: 1; min-width: 250px; }
+        .search-box input { flex: 1; padding: 0.7rem 1rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem; outline: none; transition: border 0.3s; }
+        .search-box input:focus { border-color: #667eea; }
+        .search-box button { padding: 0.7rem 1.5rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; min-height: 60vh; }
+
+        /* ESTILOS GRID Y TARJETAS */
+        .category-header { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+        .post-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; cursor: pointer; display: flex; flex-direction: column; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .post-card img { width: 100%; height: 180px; object-fit: cover; loading: lazy; }
+        .card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .card-meta { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card-title { font-size: 1.2rem; color: #2c3e50; margin-bottom: 0.8rem; font-weight: 700; }
+        .card-excerpt { font-size: 0.95rem; color: #666; margin-bottom: 1rem; flex: 1; }
+        .read-btn { color: #667eea; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+
+        /* VISTA ARTÍCULO INDIVIDUAL */
+        #article-view { display: none; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); animation: fadeIn 0.5s; }
+        .back-button { display: inline-flex; align-items: center; gap: 8px; background: #f0f2f5; color: #333; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: background 0.3s; cursor: pointer; border: none; font-size: 1rem; }
+        .back-button:hover { background: #e2e6ea; color: #667eea; }
+        .article-hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; loading: lazy; }
+        .article-title { font-size: 2.5rem; color: #2c3e50; margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { color: #7f8c8d; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+        .article-content { font-size: 1.15rem; color: #444; line-height: 1.8; }
         .article-content p { margin-bottom: 1.5rem; }
-        .contact-section {
-            margin-top: 4rem;
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+
+        /* FORMULARIO CONTACTO */
+        .contact-section { margin-top: 4rem; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-section h3 { color: #2c3e50; margin-bottom: 1rem; }
         .form-group { margin-bottom: 1rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;
-        }
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; border: none; padding: 1rem 2rem; border-radius: 6px;
-            cursor: pointer; font-size: 1rem; width: 100%; font-weight: bold;
-        }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #2c3e50; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #667eea; }
+        .submit-btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 1rem 2rem; border-radius: 6px; cursor: pointer; font-size: 1rem; width: 100%; font-weight: bold; transition: transform 0.2s; }
+        .submit-btn:hover { transform: scale(1.02); }
+
+        .no-results { text-align: center; padding: 3rem; color: #7f8c8d; font-size: 1.2rem; display: none; }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         @media (max-width: 768px) {
             .article-title { font-size: 1.8rem; }
             .article-hero-img { height: 250px; }
             #article-view { padding: 1.5rem; }
             nav ul { justify-content: flex-start; }
+            .toolbar-content { flex-direction: column; align-items: stretch; }
         }
     </style>
 </head>
 <body>
 
     <header onclick="resetView()">
-        <h1>️ VITVISORE</h1>
+        <h1>️ VitVisor</h1>
         <p>Tu fuente de conocimiento tecnológico</p>
     </header>
 
@@ -269,14 +132,27 @@
         </ul>
     </nav>
 
+    <!-- BARRA DE BÚSQUEDA -->
+    <div class="toolbar" id="searchToolbar">
+        <div class="toolbar-content">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar en VitVisor...">
+                <button onclick="performSearch()"> Buscar</button>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
+        <!-- VISTA LISTA -->
         <div id="list-view">
             <div id="categoryHeader" class="category-header" style="display:none;">
                 <span id="catIcon"></span> <span id="catName"></span>
             </div>
             <div class="posts-grid" id="postsGrid"></div>
+            <div class="no-results" id="noResults">😕 No se encontraron resultados en VitVisor</div>
         </div>
 
+        <!-- VISTA ARTÍCULO -->
         <div id="article-view">
             <button class="back-button" onclick="goBack()">⬅ Volver al listado</button>
             <img src="" alt="" id="art-img" class="article-hero-img">
@@ -286,243 +162,174 @@
             </div>
             <div id="art-content" class="article-content"></div>
             
-            <div class="contact-section" style="margin-top: 3rem;">
-                <h3>¿Te ha gustado? Déjanos un comentario o sugerencia</h3>
+            <!-- FORMULARIO INTEGRADO EN EL ARTÍCULO -->
+            <div class="contact-section">
+                <h3>💬 ¿Te ha gustado este artículo de VitVisor?</h3>
                 <br>
                 <form action="https://formspree.io/f/meaowyvj" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Tu nombre" required>
+                        <label for="art-name">Nombre *</label>
+                        <input type="text" id="art-name" name="name" required placeholder="Tu nombre completo">
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Tu email" required>
+                        <label for="art-email">Correo Electrónico *</label>
+                        <input type="email" id="art-email" name="email" required placeholder="tu@email.com">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" rows="4" placeholder="Tu mensaje..." required></textarea>
+                        <label for="art-subject">Asunto *</label>
+                        <select id="art-subject" name="subject" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="comentario">Comentario sobre el artículo</option>
+                            <option value="sugerencia">Sugerencia para VitVisor</option>
+                            <option value="correccion">Corrección</option>
+                            <option value="otro">Otro</option>
+                        </select>
                     </div>
-                    <button type="submit" class="submit-btn">Enviar Comentario</button>
+                    <div class="form-group">
+                        <label for="art-message">Mensaje *</label>
+                        <textarea id="art-message" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensaje 📨</button>
                 </form>
             </div>
+        </div>
+
+        <!-- FORMULARIO EN PÁGINA PRINCIPAL -->
+        <div id="main-contact" class="contact-section" style="margin-top: 4rem;">
+            <h3>📧 Contacto y Sugerencias Generales</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">¿Tienes alguna pregunta general o quieres colaborar con VitVisor?</p>
+            <form action="https://formspree.io/f/meaowyvj" method="POST">
+                <div class="form-group">
+                    <label for="main-name">Nombre *</label>
+                    <input type="text" id="main-name" name="name" required placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <label for="main-email">Correo Electrónico *</label>
+                    <input type="email" id="main-email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="main-subject">Asunto *</label>
+                    <select id="main-subject" name="subject" required>
+                        <option value="">Selecciona un asunto</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="pregunta">Pregunta</option>
+                        <option value="colaboracion">Colaboración</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="main-message">Mensaje *</label>
+                    <textarea id="main-message" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar Mensaje </button>
+            </form>
         </div>
     </div>
 
     <footer style="text-align:center; padding: 2rem; color:#777; margin-top:2rem;">
-        &copy; 2026 Blog Tech - Todos los derechos reservados
+        &copy; 2026 VitVisor - Todos los derechos reservados
     </footer>
 
     <script>
         // ==========================================
-        // DATOS DE LAS ENTRADAS + SCHEMA.ORG POR ARTÍCULO
+        // DATOS DE LAS ENTRADAS VITVISOR
         // ==========================================
         const posts = [
             {
-                id: 1,
-                title: "Introducción a Python para Principiantes",
-                category: "Programación",
+                id: 1, title: "Introducción a Python para Principiantes", category: "Programación",
                 image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&h=600&fit=crop",
                 content: "<p>Python es uno de los lenguajes más potentes y sencillos de aprender. En este artículo cubrimos desde la instalación hasta tu primer bucle 'for'. Es ideal para análisis de datos y automatización.</p><p>La sintaxis limpia de Python permite escribir menos líneas de código comparado con Java o C++.</p>",
                 date: "15 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Introducción a Python para Principiantes",
-                    "datePublished": "2026-10-15",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Introducción a Python para Principiantes", "datePublished": "2026-10-15", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 2,
-                title: "JavaScript Moderno: ES6 y Beyond",
-                category: "Programación",
+                id: 2, title: "JavaScript Moderno: ES6 y Beyond", category: "Programación",
                 image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
                 content: "<p>El estándar ES6 trajo revolución al desarrollo web. Arrow functions, Promesas y Async/Await cambiaron para siempre cómo manejamos la asincronía en el navegador.</p>",
                 date: "18 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "JavaScript Moderno: ES6 y Beyond",
-                    "datePublished": "2026-10-18",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "JavaScript Moderno: ES6 y Beyond", "datePublished": "2026-10-18", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 3,
-                title: "Fundamentos de TCP/IP",
-                category: "Redes",
+                id: 3, title: "Fundamentos de TCP/IP", category: "Redes",
                 image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop",
                 content: "<p>Entender cómo viajan los paquetes por internet es vital. Analizamos el modelo OSI y cómo funciona el handshake de TCP.</p>",
                 date: "10 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Fundamentos de TCP/IP",
-                    "datePublished": "2026-10-10",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Fundamentos de TCP/IP", "datePublished": "2026-10-10", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 4,
-                title: "Configuración de Redes WiFi Seguras",
-                category: "Redes",
+                id: 4, title: "Configuración de Redes WiFi Seguras", category: "Redes",
                 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
                 content: "<p>WPA3 es el nuevo estándar. Aprende a segmentar tu red doméstica para proteger tus dispositivos IoT de intrusos.</p>",
                 date: "12 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Configuración de Redes WiFi Seguras",
-                    "datePublished": "2026-10-12",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Configuración de Redes WiFi Seguras", "datePublished": "2026-10-12", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 5,
-                title: "Ciberseguridad: Protegiendo tu Identidad",
-                category: "Seguridad",
+                id: 5, title: "Ciberseguridad: Protegiendo tu Identidad", category: "Seguridad",
                 image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
                 content: "<p>El phishing evoluciona cada día. Descubre cómo usar gestores de contraseñas y autenticación de dos factores (2FA) correctamente.</p>",
                 date: "08 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Ciberseguridad: Protegiendo tu Identidad",
-                    "datePublished": "2026-10-08",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Ciberseguridad: Protegiendo tu Identidad", "datePublished": "2026-10-08", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 6,
-                title: "Hacking Ético y Pentesting",
-                category: "Seguridad",
+                id: 6, title: "Hacking Ético y Pentesting", category: "Seguridad",
                 image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
                 content: "<p>Kali Linux y Metasploit son herramientas esenciales. El hacking ético busca vulnerabilidades antes que los criminales.</p>",
                 date: "11 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Hacking Ético y Pentesting",
-                    "datePublished": "2026-10-11",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Hacking Ético y Pentesting", "datePublished": "2026-10-11", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 7,
-                title: "PC Gaming de Alto Rendimiento",
-                category: "Hardware",
+                id: 7, title: "PC Gaming de Alto Rendimiento", category: "Hardware",
                 image: "https://images.unsplash.com/photo-1587202372634-32705e3e568e?w=800&h=600&fit=crop",
                 content: "<p>Montar un PC hoy en día requiere equilibrio entre CPU y GPU. Analizamos las mejores combinaciones calidad-precio para 2026.</p>",
                 date: "05 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "PC Gaming de Alto Rendimiento",
-                    "datePublished": "2026-10-05",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "PC Gaming de Alto Rendimiento", "datePublished": "2026-10-05", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 8,
-                title: "Procesadores: Intel vs AMD en 2026",
-                category: "Hardware",
+                id: 8, title: "Procesadores: Intel vs AMD en 2026", category: "Hardware",
                 image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&h=600&fit=crop",
                 content: "<p>La batalla de los núcleos continúa. ¿Es mejor tener más núcleos para productividad o mayor frecuencia para gaming?</p>",
                 date: "07 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Procesadores: Intel vs AMD en 2026",
-                    "datePublished": "2026-10-07",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Procesadores: Intel vs AMD en 2026", "datePublished": "2026-10-07", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 9,
-                title: "Sistemas Operativos: Windows vs Linux",
-                category: "Software",
+                id: 9, title: "Sistemas Operativos: Windows vs Linux", category: "Software",
                 image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=600&fit=crop",
                 content: "<p>Linux ha ganado mucho terreno en el escritorio gracias a Steam Deck y mejoras en drivers. ¿Es hora de hacer el cambio?</p>",
                 date: "01 Oct 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Sistemas Operativos: Windows vs Linux",
-                    "datePublished": "2026-10-01",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Sistemas Operativos: Windows vs Linux", "datePublished": "2026-10-01", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 10,
-                title: "SQL vs NoSQL: La Guía Definitiva",
-                category: "Bases de Datos",
+                id: 10, title: "SQL vs NoSQL: La Guía Definitiva", category: "Bases de Datos",
                 image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
                 content: "<p>MongoDB no siempre es la respuesta. Aprende cuándo la estructura relacional de PostgreSQL es insustituible.</p>",
                 date: "25 Sep 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "SQL vs NoSQL: La Guía Definitiva",
-                    "datePublished": "2026-09-25",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "SQL vs NoSQL: La Guía Definitiva", "datePublished": "2026-09-25", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 11,
-                title: "Machine Learning para Principiantes",
-                category: "Inteligencia Artificial",
+                id: 11, title: "Machine Learning para Principiantes", category: "Inteligencia Artificial",
                 image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
                 content: "<p>Las redes neuronales no son magia. Entender la regresión lineal es el primer paso para dominar TensorFlow.</p>",
                 date: "20 Sep 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "Machine Learning para Principiantes",
-                    "datePublished": "2026-09-20",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "Machine Learning para Principiantes", "datePublished": "2026-09-20", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             },
             {
-                id: 12,
-                title: "ChatGPT y el futuro del trabajo",
-                category: "Inteligencia Artificial",
+                id: 12, title: "ChatGPT y el futuro del trabajo", category: "Inteligencia Artificial",
                 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
                 content: "<p>Los LLMs están cambiando la programación y la redacción. ¿Cómo integrarlos en tu flujo de trabajo sin perder calidad?</p>",
                 date: "22 Sep 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "ChatGPT y el futuro del trabajo",
-                    "datePublished": "2026-09-22",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
-            },
-            {
-                id: 13,
-                title: "ChatGPT y el futuro del trabajo",
-                category: "Articulos",
-                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-                content: "<p>Los LLMs están cambiando la programación y la redacción. ¿Cómo integrarlos en tu flujo de trabajo sin perder calidad? si se ve esto nuevo esta bien </p>",
-                date: "22 Sep 2026",
-                schema: {
-                    "@type": "Article",
-                    "headline": "ChatGPT y el futuro del trabajo",
-                    "datePublished": "2026-09-22",
-                    "author": {"@type": "Person", "name": "Blog Tech"},
-                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
-                }
+                schema: { "@type": "Article", "headline": "ChatGPT y el futuro del trabajo", "datePublished": "2026-09-22", "author": {"@type": "Person", "name": "VitVisor"}, "publisher": {"@type": "Organization", "name": "VitVisor"} }
             }
-            
         ];
 
-        const catIcons = {
-            "Programación": "", "Redes": "🌐", "Seguridad": "🔒",
-            "Hardware": "⚙️", "Software": "📱", "Bases de Datos": "️",
-            "Inteligencia Artificial": "🤖"
-        };
+        const catIcons = { "Programación": "💻", "Redes": "🌐", "Seguridad": "🔒", "Hardware": "⚙️", "Software": "", "Bases de Datos": "🗄️", "Inteligencia Artificial": "🤖" };
 
         const gridView = document.getElementById('list-view');
         const articleView = document.getElementById('article-view');
         const postsGrid = document.getElementById('postsGrid');
         const navList = document.getElementById('navList');
         const categoryHeader = document.getElementById('categoryHeader');
+        const searchToolbar = document.getElementById('searchToolbar');
+        const mainContact = document.getElementById('main-contact');
 
         function initMenu() {
             const categories = [...new Set(posts.map(p => p.category))].sort();
@@ -537,11 +344,20 @@
             });
         }
 
-        function renderPosts(filterCat = 'all') {
+        function renderPosts(filterCat = 'all', searchTerm = '') {
             postsGrid.innerHTML = '';
-            const filtered = filterCat === 'all' ? posts : posts.filter(p => p.category === filterCat);
+            let filtered = filterCat === 'all' ? posts : posts.filter(p => p.category === filterCat);
 
-            if (filterCat !== 'all') {
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filtered = filtered.filter(p => 
+                    p.title.toLowerCase().includes(term) || 
+                    p.content.toLowerCase().includes(term) ||
+                    p.category.toLowerCase().includes(term)
+                );
+            }
+
+            if (filterCat !== 'all' && !searchTerm) {
                 categoryHeader.style.display = 'flex';
                 document.getElementById('catName').textContent = filterCat;
                 document.getElementById('catIcon').textContent = catIcons[filterCat] || '📁';
@@ -549,31 +365,55 @@
                 categoryHeader.style.display = 'none';
             }
 
-            filtered.forEach(post => {
-                const card = document.createElement('div');
-                card.className = 'post-card';
-                card.onclick = () => openArticle(post.id);
-                card.innerHTML = `
-                    <img src="${post.image}" alt="${post.title}" loading="lazy">
-                    <div class="card-body">
-                        <div class="card-meta">${post.category} • ${post.date}</div>
-                        <div class="card-title">${post.title}</div>
-                        <div class="card-excerpt">${post.content.replace(/<[^>]*>?/gm, '').substring(0, 80)}...</div>
-                        <span class="read-btn">Leer artículo completo →</span>
-                    </div>
-                `;
-                postsGrid.appendChild(card);
-            });
+            const noResults = document.getElementById('noResults');
+            if (filtered.length === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+                filtered.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+                    card.onclick = () => openArticle(post.id);
+                    card.innerHTML = `
+                        <img src="${post.image}" alt="${post.title}" loading="lazy">
+                        <div class="card-body">
+                            <div class="card-meta">${post.category} • ${post.date}</div>
+                            <div class="card-title">${post.title}</div>
+                            <div class="card-excerpt">${post.content.replace(/<[^>]*>?/gm, '').substring(0, 80)}...</div>
+                            <span class="read-btn">Leer artículo completo →</span>
+                        </div>
+                    `;
+                    postsGrid.appendChild(card);
+                });
+            }
         }
 
         function filterCategory(cat) {
             document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
             const activeLink = document.getElementById(cat === 'all' ? 'nav-all' : `nav-${cat}`);
             if(activeLink) activeLink.classList.add('active');
+            
+            document.getElementById('searchInput').value = '';
+            
             showListView();
             renderPosts(cat);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function performSearch() {
+            const term = document.getElementById('searchInput').value.trim();
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.getElementById('nav-all').classList.add('active');
+            
+            showListView();
+            renderPosts('all', term);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter' || this.value === '') {
+                performSearch();
+            }
+        });
 
         function openArticle(id) {
             const post = posts.find(p => p.id === id);
@@ -585,19 +425,19 @@
             document.getElementById('art-cat').textContent = post.category;
             document.getElementById('art-content').innerHTML = post.content;
 
-            // Inyectar Schema.org dinámico para el artículo abierto
             injectArticleSchema(post);
 
+            searchToolbar.style.display = 'none';
+            mainContact.style.display = 'none';
+            
             gridView.style.display = 'none';
             articleView.style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function injectArticleSchema(post) {
-            // Eliminar schema anterior si existe
             const oldSchema = document.getElementById('dynamic-article-schema');
             if (oldSchema) oldSchema.remove();
-
             const schemaScript = document.createElement('script');
             schemaScript.type = 'application/ld+json';
             schemaScript.id = 'dynamic-article-schema';
@@ -607,9 +447,12 @@
 
         function goBack() {
             showListView();
-            // Eliminar schema dinámico al volver
             const oldSchema = document.getElementById('dynamic-article-schema');
             if (oldSchema) oldSchema.remove();
+            
+            searchToolbar.style.display = 'block';
+            mainContact.style.display = 'block';
+            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -619,6 +462,7 @@
         }
 
         function resetView() {
+            document.getElementById('searchInput').value = '';
             filterCategory('all');
         }
 
