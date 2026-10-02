@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- VERIFICACIÓN GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="ifqCv2GhUP1T9SNLvbV9kcZ8A8L9zwZdFFmaqcSiANM" />
-    <title>Blog Tech - SPA</title>
+    
+    <!-- META TAGS SEO ESENCIALES -->
+    <title>Blog Tech - Artículos de Informática, Programación y Tecnología</title>
+    <meta name="description" content="Blog especializado en informática con artículos sobre programación, redes, ciberseguridad, hardware, IA y bases de datos. Contenido técnico actualizado 2026." />
+    <meta name="keywords" content="informática, programación, python, javascript, ciberseguridad, hardware, inteligencia artificial, bases de datos, redes, tecnología" />
+    <meta name="author" content="Blog Tech" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://tudominio.com/" />
+    
+    <!-- OPEN GRAPH PARA REDES SOCIALES -->
+    <meta property="og:title" content="Blog Tech - Artículos de Informática y Tecnología" />
+    <meta property="og:description" content="Contenido técnico sobre programación, seguridad, hardware e IA. Aprende con artículos prácticos y actualizados." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tudominio.com/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop" />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog Tech - Informática y Tecnología" />
+    <meta name="twitter:description" content="Artículos técnicos sobre programación, ciberseguridad, hardware e inteligencia artificial." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop" />
+    
+    <!-- DATOS ESTRUCTURADOS SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Blog Tech",
+        "url": "https://tudominio.com/",
+        "description": "Blog especializado en informática con artículos sobre programación, redes, ciberseguridad, hardware, IA y bases de datos.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Blog Tech",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://tudominio.com/logo.png"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://tudominio.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
     <style>
-        /* ESTILOS GENERALES */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,8 +61,6 @@
             color: #333;
             line-height: 1.6;
         }
-
-        /* HEADER */
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -24,8 +69,6 @@
         }
         header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; cursor: pointer; }
         header p { opacity: 0.9; }
-
-        /* NAVEGACIÓN (MENÚ) */
         nav {
             background-color: #fff;
             position: sticky;
@@ -33,7 +76,7 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             padding: 0.5rem 0;
-            overflow-x: auto; /* Para móviles */
+            overflow-x: auto;
         }
         nav ul {
             list-style: none;
@@ -58,16 +101,12 @@
             background-color: #667eea;
             color: white;
         }
-
-        /* CONTENEDOR PRINCIPAL */
         .container {
             max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
             min-height: 60vh;
         }
-
-        /* ESTILO DE TÍTULO DE CATEGORÍA (Como tu imagen) */
         .category-header {
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -81,14 +120,11 @@
             gap: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
-        /* GRID DE ENTRADAS (ÁLBUM) */
         .posts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
         }
-
         .post-card {
             background: white;
             border-radius: 12px;
@@ -107,6 +143,7 @@
             width: 100%;
             height: 180px;
             object-fit: cover;
+            loading: lazy;
         }
         .card-body {
             padding: 1.5rem;
@@ -139,17 +176,14 @@
             text-decoration: none;
             font-size: 0.9rem;
         }
-
-        /* VISTA DE ARTÍCULO INDIVIDUAL (OCULTA POR DEFECTO) */
         #article-view {
-            display: none; /* Se activa con JS */
+            display: none;
             background: white;
             padding: 3rem;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             animation: fadeIn 0.5s;
         }
-
         .back-button {
             display: inline-flex;
             align-items: center;
@@ -170,13 +204,13 @@
             background: #e2e6ea;
             color: #667eea;
         }
-
         .article-hero-img {
             width: 100%;
             height: 400px;
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 2rem;
+            loading: lazy;
         }
         .article-title {
             font-size: 2.5rem;
@@ -196,8 +230,6 @@
             line-height: 1.8;
         }
         .article-content p { margin-bottom: 1.5rem; }
-
-        /* FORMULARIO CONTACTO */
         .contact-section {
             margin-top: 4rem;
             background: white;
@@ -215,10 +247,7 @@
             color: white; border: none; padding: 1rem 2rem; border-radius: 6px;
             cursor: pointer; font-size: 1rem; width: 100%; font-weight: bold;
         }
-
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .article-title { font-size: 1.8rem; }
             .article-hero-img { height: 250px; }
@@ -234,29 +263,22 @@
         <p>Tu fuente de conocimiento tecnológico</p>
     </header>
 
-    <!-- MENÚ DINÁMICO -->
     <nav>
         <ul id="navList">
             <li><a onclick="filterCategory('all')" class="active" id="nav-all">Todas</a></li>
-            <!-- Las categorías se insertan aquí con JS -->
         </ul>
     </nav>
 
     <div class="container">
-        
-        <!-- VISTA DE LISTA (GRID) -->
         <div id="list-view">
             <div id="categoryHeader" class="category-header" style="display:none;">
                 <span id="catIcon"></span> <span id="catName"></span>
             </div>
-            <div class="posts-grid" id="postsGrid">
-                <!-- Las tarjetas se generan aquí -->
-            </div>
+            <div class="posts-grid" id="postsGrid"></div>
         </div>
 
-        <!-- VISTA DE ARTÍCULO INDIVIDUAL -->
         <div id="article-view">
-            <button class="back-button" onclick="goBack()"> Volver al listado</button>
+            <button class="back-button" onclick="goBack()">⬅ Volver al listado</button>
             <img src="" alt="" id="art-img" class="article-hero-img">
             <h1 id="art-title" class="article-title"></h1>
             <div class="article-meta">
@@ -264,7 +286,6 @@
             </div>
             <div id="art-content" class="article-content"></div>
             
-            <!-- Formulario al final del artículo también -->
             <div class="contact-section" style="margin-top: 3rem;">
                 <h3>¿Te ha gustado? Déjanos un comentario o sugerencia</h3>
                 <br>
@@ -282,7 +303,6 @@
                 </form>
             </div>
         </div>
-
     </div>
 
     <footer style="text-align:center; padding: 2rem; color:#777; margin-top:2rem;">
@@ -291,7 +311,7 @@
 
     <script>
         // ==========================================
-        // DATOS DE LAS ENTRADAS (EDITAR AQUÍ)
+        // DATOS DE LAS ENTRADAS + SCHEMA.ORG POR ARTÍCULO
         // ==========================================
         const posts = [
             {
@@ -300,15 +320,29 @@
                 category: "Programación",
                 image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800&h=600&fit=crop",
                 content: "<p>Python es uno de los lenguajes más potentes y sencillos de aprender. En este artículo cubrimos desde la instalación hasta tu primer bucle 'for'. Es ideal para análisis de datos y automatización.</p><p>La sintaxis limpia de Python permite escribir menos líneas de código comparado con Java o C++.</p>",
-                date: "15 Oct 2026"
+                date: "15 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Introducción a Python para Principiantes",
+                    "datePublished": "2026-10-15",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 2,
                 title: "JavaScript Moderno: ES6 y Beyond",
                 category: "Programación",
                 image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop",
-                content: "<p>El estándar ES6 trajo革命 al desarrollo web. Arrow functions, Promesas y Async/Await cambiaron para siempre cómo manejamos la asincronía en el navegador.</p>",
-                date: "18 Oct 2026"
+                content: "<p>El estándar ES6 trajo revolución al desarrollo web. Arrow functions, Promesas y Async/Await cambiaron para siempre cómo manejamos la asincronía en el navegador.</p>",
+                date: "18 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "JavaScript Moderno: ES6 y Beyond",
+                    "datePublished": "2026-10-18",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 3,
@@ -316,7 +350,14 @@
                 category: "Redes",
                 image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop",
                 content: "<p>Entender cómo viajan los paquetes por internet es vital. Analizamos el modelo OSI y cómo funciona el handshake de TCP.</p>",
-                date: "10 Oct 2026"
+                date: "10 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Fundamentos de TCP/IP",
+                    "datePublished": "2026-10-10",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 4,
@@ -324,7 +365,14 @@
                 category: "Redes",
                 image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop",
                 content: "<p>WPA3 es el nuevo estándar. Aprende a segmentar tu red doméstica para proteger tus dispositivos IoT de intrusos.</p>",
-                date: "12 Oct 2026"
+                date: "12 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Configuración de Redes WiFi Seguras",
+                    "datePublished": "2026-10-12",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 5,
@@ -332,7 +380,14 @@
                 category: "Seguridad",
                 image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
                 content: "<p>El phishing evoluciona cada día. Descubre cómo usar gestores de contraseñas y autenticación de dos factores (2FA) correctamente.</p>",
-                date: "08 Oct 2026"
+                date: "08 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Ciberseguridad: Protegiendo tu Identidad",
+                    "datePublished": "2026-10-08",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 6,
@@ -340,7 +395,14 @@
                 category: "Seguridad",
                 image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
                 content: "<p>Kali Linux y Metasploit son herramientas esenciales. El hacking ético busca vulnerabilidades antes que los criminales.</p>",
-                date: "11 Oct 2026"
+                date: "11 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Hacking Ético y Pentesting",
+                    "datePublished": "2026-10-11",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 7,
@@ -348,7 +410,14 @@
                 category: "Hardware",
                 image: "https://images.unsplash.com/photo-1587202372634-32705e3e568e?w=800&h=600&fit=crop",
                 content: "<p>Montar un PC hoy en día requiere equilibrio entre CPU y GPU. Analizamos las mejores combinaciones calidad-precio para 2026.</p>",
-                date: "05 Oct 2026"
+                date: "05 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "PC Gaming de Alto Rendimiento",
+                    "datePublished": "2026-10-05",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 8,
@@ -356,7 +425,14 @@
                 category: "Hardware",
                 image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&h=600&fit=crop",
                 content: "<p>La batalla de los núcleos continúa. ¿Es mejor tener más núcleos para productividad o mayor frecuencia para gaming?</p>",
-                date: "07 Oct 2026"
+                date: "07 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Procesadores: Intel vs AMD en 2026",
+                    "datePublished": "2026-10-07",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 9,
@@ -364,7 +440,14 @@
                 category: "Software",
                 image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=600&fit=crop",
                 content: "<p>Linux ha ganado mucho terreno en el escritorio gracias a Steam Deck y mejoras en drivers. ¿Es hora de hacer el cambio?</p>",
-                date: "01 Oct 2026"
+                date: "01 Oct 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Sistemas Operativos: Windows vs Linux",
+                    "datePublished": "2026-10-01",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 10,
@@ -372,7 +455,14 @@
                 category: "Bases de Datos",
                 image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
                 content: "<p>MongoDB no siempre es la respuesta. Aprende cuándo la estructura relacional de PostgreSQL es insustituible.</p>",
-                date: "25 Sep 2026"
+                date: "25 Sep 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "SQL vs NoSQL: La Guía Definitiva",
+                    "datePublished": "2026-09-25",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 11,
@@ -380,7 +470,14 @@
                 category: "Inteligencia Artificial",
                 image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop",
                 content: "<p>Las redes neuronales no son magia. Entender la regresión lineal es el primer paso para dominar TensorFlow.</p>",
-                date: "20 Sep 2026"
+                date: "20 Sep 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "Machine Learning para Principiantes",
+                    "datePublished": "2026-09-20",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             },
             {
                 id: 12,
@@ -388,56 +485,46 @@
                 category: "Inteligencia Artificial",
                 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
                 content: "<p>Los LLMs están cambiando la programación y la redacción. ¿Cómo integrarlos en tu flujo de trabajo sin perder calidad?</p>",
-                date: "22 Sep 2026"
+                date: "22 Sep 2026",
+                schema: {
+                    "@type": "Article",
+                    "headline": "ChatGPT y el futuro del trabajo",
+                    "datePublished": "2026-09-22",
+                    "author": {"@type": "Person", "name": "Blog Tech"},
+                    "publisher": {"@type": "Organization", "name": "Blog Tech"}
+                }
             }
         ];
 
-        // Iconos para categorías
         const catIcons = {
-            "Programación": "💻",
-            "Redes": "🌐",
-            "Seguridad": "🔒",
-            "Hardware": "️",
-            "Software": "",
-            "Bases de Datos": "️",
+            "Programación": "", "Redes": "🌐", "Seguridad": "🔒",
+            "Hardware": "⚙️", "Software": "📱", "Bases de Datos": "️",
             "Inteligencia Artificial": "🤖"
         };
 
-        // ==========================================
-        // LÓGICA DE LA PÁGINA
-        // ==========================================
-        
         const gridView = document.getElementById('list-view');
         const articleView = document.getElementById('article-view');
         const postsGrid = document.getElementById('postsGrid');
         const navList = document.getElementById('navList');
         const categoryHeader = document.getElementById('categoryHeader');
 
-        // 1. Inicializar Menú
         function initMenu() {
             const categories = [...new Set(posts.map(p => p.category))].sort();
-            
             categories.forEach(cat => {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.textContent = cat;
                 a.onclick = () => filterCategory(cat);
-                a.id = `nav-${cat}`; // ID para marcar activo
+                a.id = `nav-${cat}`;
                 li.appendChild(a);
                 navList.appendChild(li);
             });
         }
 
-        // 2. Renderizar Entradas (Grid)
         function renderPosts(filterCat = 'all') {
             postsGrid.innerHTML = '';
-            
-            // Filtrar posts
-            const filtered = filterCat === 'all' 
-                ? posts 
-                : posts.filter(p => p.category === filterCat);
+            const filtered = filterCat === 'all' ? posts : posts.filter(p => p.category === filterCat);
 
-            // Mostrar/Ocultar cabecera de categoría
             if (filterCat !== 'all') {
                 categoryHeader.style.display = 'flex';
                 document.getElementById('catName').textContent = filterCat;
@@ -446,14 +533,12 @@
                 categoryHeader.style.display = 'none';
             }
 
-            // Crear tarjetas
             filtered.forEach(post => {
                 const card = document.createElement('div');
                 card.className = 'post-card';
                 card.onclick = () => openArticle(post.id);
-                
                 card.innerHTML = `
-                    <img src="${post.image}" alt="${post.title}">
+                    <img src="${post.image}" alt="${post.title}" loading="lazy">
                     <div class="card-body">
                         <div class="card-meta">${post.category} • ${post.date}</div>
                         <div class="card-title">${post.title}</div>
@@ -465,46 +550,50 @@
             });
         }
 
-        // 3. Filtrar Categoría
         function filterCategory(cat) {
-            // Actualizar clase activa en menú
             document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
             const activeLink = document.getElementById(cat === 'all' ? 'nav-all' : `nav-${cat}`);
             if(activeLink) activeLink.classList.add('active');
-
-            // Asegurar que estamos en vista lista
             showListView();
-            
-            // Renderizar
             renderPosts(cat);
-            
-            // Scroll arriba suave
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 4. Abrir Artículo (Vista Individual)
         function openArticle(id) {
             const post = posts.find(p => p.id === id);
             if (!post) return;
 
-            // Rellenar datos
             document.getElementById('art-img').src = post.image;
             document.getElementById('art-title').textContent = post.title;
             document.getElementById('art-date').textContent = post.date;
             document.getElementById('art-cat').textContent = post.category;
             document.getElementById('art-content').innerHTML = post.content;
 
-            // Cambiar vista
+            // Inyectar Schema.org dinámico para el artículo abierto
+            injectArticleSchema(post);
+
             gridView.style.display = 'none';
             articleView.style.display = 'block';
-            
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 5. Botón Atrás / Reset
+        function injectArticleSchema(post) {
+            // Eliminar schema anterior si existe
+            const oldSchema = document.getElementById('dynamic-article-schema');
+            if (oldSchema) oldSchema.remove();
+
+            const schemaScript = document.createElement('script');
+            schemaScript.type = 'application/ld+json';
+            schemaScript.id = 'dynamic-article-schema';
+            schemaScript.textContent = JSON.stringify(post.schema);
+            document.head.appendChild(schemaScript);
+        }
+
         function goBack() {
             showListView();
-            // Mantenemos el filtro actual, solo volvemos a la lista
+            // Eliminar schema dinámico al volver
+            const oldSchema = document.getElementById('dynamic-article-schema');
+            if (oldSchema) oldSchema.remove();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -517,10 +606,8 @@
             filterCategory('all');
         }
 
-        // INICIO
         initMenu();
         renderPosts('all');
-
     </script>
 </body>
 </html>
